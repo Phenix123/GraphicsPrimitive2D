@@ -14,6 +14,12 @@ public class MyPolygon extends MyAbstractPolygon {
      */
     public MyPolygon(int npoints, double[] xpoints, double[] ypoints) {
         super(npoints, xpoints, ypoints);
+        for (int i = 0; i < npoints; i++) {
+            for (int j = 0; j < npoints; j++) {
+                if(xpoints[i] == xpoints[j] && ypoints[i] == ypoints[j])
+                    throw new RuntimeException("Введены повторяющиеся точки");
+            }
+        }
     }
 
     /**
@@ -35,7 +41,7 @@ public class MyPolygon extends MyAbstractPolygon {
             }
         }
 
-        return resX - resY;
+        return (resX - resY)*0.5;
     }
 
 
