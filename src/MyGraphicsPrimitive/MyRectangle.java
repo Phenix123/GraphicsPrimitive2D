@@ -10,8 +10,11 @@ public class MyRectangle extends MyAbstractPolygon {
      * @param width  ширина
      * @param height высота
      */
-    public MyRectangle(double width, double height) {
-        super(4, new double[]{0, 0, width, width}, new double[]{0, height, height, 0});
+    public MyRectangle(Point start, double width, double height) {
+        super(4,
+                new double[]{start.X(), start.X(), start.X()+width, start.X()+width},
+                new double[]{start.Y(), start.Y() + height, start.Y() + height, start.Y()});
+
         if (width == 0 || height == 0)
             throw new RuntimeException("Прямоугольник не может быть создан");
     }
