@@ -16,6 +16,12 @@ public class MyRectangle extends MyAbstractPolygon {
             throw new RuntimeException("Прямоугольник не может быть создан");
     }
 
+    public MyRectangle(int npoints, double[] xpoints, double[] ypoints) {
+        super(npoints, xpoints, ypoints);
+        if(npoints != 4)
+            throw new RuntimeException("В прямоугольнике не 4 точки");
+    }
+
     /**
      * Конструктор создания прямоугольника
      *
@@ -24,8 +30,8 @@ public class MyRectangle extends MyAbstractPolygon {
      */
     public MyRectangle(Point leftTop, Point rightBot) {
         super(4, new double[]{leftTop.X(), leftTop.X(), rightBot.X(), rightBot.X()}, new double[]{rightBot.Y(), leftTop.Y(), leftTop.Y(), rightBot.Y()});
-        if (leftTop.X() == rightBot.X() || leftTop.Y() == rightBot.Y())
-            throw new RuntimeException("Прямоугольник не может быть создан");
+        //if (leftTop.X() == rightBot.X() || leftTop.Y() == rightBot.Y())
+            //throw new RuntimeException("Прямоугольник не может быть создан");
     }
 
     /**

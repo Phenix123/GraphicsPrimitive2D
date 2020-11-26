@@ -46,6 +46,12 @@ public abstract class MyAbstractPolygon extends MyAreaPrimitive2D {
         this.npoints = npoints;
         this.xpoints = xpoints;
         this.ypoints = ypoints;
+        for (int i = 0; i < npoints; i++) {
+            for (int j = 0; j < npoints; j++) {
+                if(xpoints[i] == xpoints[j] && ypoints[i] == ypoints[j] && i != j)
+                    throw new RuntimeException("Введены повторяющиеся точки");
+            }
+        }
     }
 
     /**

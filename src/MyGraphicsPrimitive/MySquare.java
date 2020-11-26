@@ -7,7 +7,7 @@ public class MySquare extends MyRectangle {
      *
      * @param side сторона квадрата
      */
-    public MySquare(double side) {
-        super(side, side);
+    public MySquare(Point start, double side) {
+        super(new Point(start.X(), start.Y()+side), new Point(start.X()+side,start.Y()));
     }
 }
